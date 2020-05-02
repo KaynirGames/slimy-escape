@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: d92f4afae1e84a44fa58ab47afcd1c82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1232469081802241488
+    second: Laboratory Tileset_0
+  - first:
+      213: -5543065819650684453
+    second: Laboratory Tileset_1
+  - first:
+      213: -8503802221335469198
+    second: Laboratory Tileset_2
+  - first:
+      213: 6946415660269393361
+    second: Laboratory Tileset_3
+  - first:
+      213: 2375906136558392175
+    second: Laboratory Tileset_4
+  - first:
+      213: -9086025600537264445
+    second: Laboratory Tileset_5
+  - first:
+      213: 7176443905766227800
+    second: Laboratory Tileset_6
+  - first:
+      213: 7793497315522826336
+    second: Laboratory Tileset_7
+  - first:
+      213: -2956651649567505041
+    second: Laboratory Tileset_8
+  - first:
+      213: -8243898052144748987
+    second: Laboratory Tileset_9
+  - first:
+      213: -8033678738193961241
+    second: Laboratory Tileset_10
+  - first:
+      213: 6357657933080017191
+    second: Laboratory Tileset_11
+  - first:
+      213: -610561025593987448
+    second: Laboratory Tileset_12
+  - first:
+      213: 2079840383460841281
+    second: Laboratory Tileset_13
+  - first:
+      213: 2781149158266733990
+    second: Laboratory Tileset_14
+  - first:
+      213: 5406326497974338736
+    second: Laboratory Tileset_15
+  - first:
+      213: -4463847935361939304
+    second: Laboratory Tileset_16
+  - first:
+      213: 4128132899735959224
+    second: Laboratory Tileset_17
+  - first:
+      213: 9147181787680770078
+    second: Laboratory Tileset_18
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laboratory Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1121
+        width: 516
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42a07a41fa9fd64e8c4d0c637765beb
+      internalID: -1232469081802241488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1121
+        width: 519
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43155d40d1e66a241a4b63e249ffc297
+      internalID: -5543065819650684453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1121
+        width: 516
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80478cec6ac0fe149b53160268c50cce
+      internalID: -8503802221335469198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1121
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a8024c9bdd06f46aa7f9be153f3928
+      internalID: 6946415660269393361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 1121
+        width: 517
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435e4ad90d9ee9345be1b1725749f4ac
+      internalID: 2375906136558392175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 583
+        width: 516
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d4a5ef945103942b1fd7f611099341
+      internalID: -9086025600537264445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 581
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7f7c39611efa14383efae34f47b052
+      internalID: 7176443905766227800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 583
+        width: 516
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86807aae31383e843b654d364739cc4b
+      internalID: 7793497315522826336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 583
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9e39cff03cf84489ceca722c4aa239
+      internalID: -2956651649567505041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 583
+        width: 517
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755b930ef89441948bef91de663ab071
+      internalID: -8243898052144748987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 583
+        width: 516
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61fefdbff2a55a489d4ba35b8d951d8
+      internalID: -8033678738193961241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 3303
+        y: 583
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62680ac189f9c646b586aa5703878ba
+      internalID: 6357657933080017191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 44
+        width: 516
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a90f9b397505c418286faca4aa358e
+      internalID: -610561025593987448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_13
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 44
+        width: 518
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f86f9e965bcba64591ca4ab7cef67c4
+      internalID: 2079840383460841281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 44
+        width: 516
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41356574f2dad91448381c8bf5c15630
+      internalID: 2781149158266733990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 42
+        width: 518
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb518b87bd925cc45bca53df12d7b863
+      internalID: 5406326497974338736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 42
+        width: 517
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4b014069bc1ea4f99d24f818364bf5
+      internalID: -4463847935361939304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 42
+        width: 516
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29775b1963a99fe42b085485e8a7fa45
+      internalID: 4128132899735959224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 3303
+        y: 44
+        width: 518
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86ab2135f9dbb84eb015a0f9a7c8335
+      internalID: 9147181787680770078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
