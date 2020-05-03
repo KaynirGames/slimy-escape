@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,5 +21,13 @@ public class Player : MonoBehaviour
     public void Launch(Vector2 force)
     {
         rb.AddForce(force, ForceMode2D.Impulse);
+    }
+
+    public void Die()
+    {
+        //death particle effect
+        Destroy(gameObject);
+        //убрать рестарт в класс-менеджер сцен
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

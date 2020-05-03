@@ -119,18 +119,18 @@ TextureImporter:
       name: Spike Trap Sheet_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 21
-        width: 251
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3547d7f82832b0246b5d75a9ccedf6c8
+      spriteID: d532243cca3425146a327bbdc6181927
       internalID: -5747579091130190490
       vertices: []
       indices: 
@@ -140,18 +140,18 @@ TextureImporter:
       name: Spike Trap Sheet_1
       rect:
         serializedVersion: 2
-        x: 275
-        y: 21
-        width: 251
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 256
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a6ddc4873498e74ebf43e525183d79f
+      spriteID: cecb1919f2bd9554f8347ab9e84a98ea
       internalID: -1068585230358873565
       vertices: []
       indices: 
@@ -161,18 +161,18 @@ TextureImporter:
       name: Spike Trap Sheet_2
       rect:
         serializedVersion: 2
-        x: 540
-        y: 21
-        width: 251
-        height: 156
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 512
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e910c1c47c153114ea70fe4658eadae4
+      spriteID: afbfb0f3eac2c4642a7d0c39f41303f6
       internalID: -5605656040789410650
       vertices: []
       indices: 
@@ -182,18 +182,18 @@ TextureImporter:
       name: Spike Trap Sheet_3
       rect:
         serializedVersion: 2
-        x: 805
-        y: 21
-        width: 251
-        height: 245
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 768
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6228aa95613c8747a574c54c790ebfd
+      spriteID: 16bfd1074d1c43643977aff66959cb69
       internalID: 1418393466308841785
       vertices: []
       indices: 
@@ -203,18 +203,18 @@ TextureImporter:
       name: Spike Trap Sheet_4
       rect:
         serializedVersion: 2
-        x: 1070
-        y: 21
-        width: 251
-        height: 367
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1024
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acbc54009e912d243a116e55154fdd72
+      spriteID: b58305a763f77624689d421507f7f0bc
       internalID: 7187971262285547000
       vertices: []
       indices: 
@@ -224,18 +224,18 @@ TextureImporter:
       name: Spike Trap Sheet_5
       rect:
         serializedVersion: 2
-        x: 1335
-        y: 21
-        width: 251
-        height: 453
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1280
+        y: 0
+        width: 256
+        height: 512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de3f245151e389e4388e449be074e2fd
+      spriteID: 335475c725bec1f4b9fe4490a2bc6f58
       internalID: 1864300439983174167
       vertices: []
       indices: 
