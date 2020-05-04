@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: aa2a5d1c14e95414e86d41d26dca4337
+guid: fa0bb347b5f40e9428b16a6f587b4bbf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5833253821443949946
-    second: Acid Turret Sheet_0
+      213: 6083342538386941525
+    second: Acid Bullet Sheet_0
   - first:
-      213: -2160032753205258231
-    second: Acid Turret Sheet_1
+      213: 3279380369025129831
+    second: Acid Bullet Sheet_1
   - first:
-      213: 9030225815194585270
-    second: Acid Turret Sheet_2
+      213: -361063840524921379
+    second: Acid Bullet Sheet_2
   - first:
-      213: 1692818463446500973
-    second: Acid Turret Sheet_3
+      213: -4857926618051885143
+    second: Acid Bullet Sheet_3
+  - first:
+      213: -7243560956694288655
+    second: Acid Bullet Sheet_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -57,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Acid Turret Sheet_0
+      name: Acid Bullet Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +127,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74bba470306561f409246ab822827f95
-      internalID: 5833253821443949946
+      spriteID: beb601a0b3b84b147a619f2ca57bba14
+      internalID: 6083342538386941525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Acid Turret Sheet_1
+      name: Acid Bullet Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db30ab9b35be06f45a03757a35063721
+      internalID: 3279380369025129831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acid Bullet Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9647e07a7000f48887adc44abfc541
+      internalID: -361063840524921379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acid Bullet Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9add45eec74934780713039442f958
+      internalID: -4857926618051885143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acid Bullet Sheet_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 512
-        height: 512
+        width: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,50 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1362059ce75cdf4c9b92ad2fb2b2378
-      internalID: -2160032753205258231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Acid Turret Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cd3a45183c61a64da3013f7bb5169c8
-      internalID: 9030225815194585270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Acid Turret Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3af45505f9a4a7a48b4d7b110c32e47a
-      internalID: 1692818463446500973
+      spriteID: 2b8cf8975674dfc42886cc4bb5330c94
+      internalID: -7243560956694288655
       vertices: []
       indices: 
       edges: []

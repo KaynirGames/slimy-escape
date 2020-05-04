@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField] private float minVelocity;
-    //[SerializeField] private float maxVelocity;
-
-    [HideInInspector] public Rigidbody2D rb;
+    private Rigidbody2D rb;
     
     private void Start()
     {
@@ -16,7 +13,7 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Толкает игрока с заданной силой
+    /// Запускает игрока с заданной силой
     /// </summary>
     public void Launch(Vector2 force)
     {

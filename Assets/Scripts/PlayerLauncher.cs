@@ -6,16 +6,17 @@ using UnityEngine;
 public class PlayerLauncher : MonoBehaviour
 {
     /// <summary>
-    /// Модификатор для расчета силы толчка
+    /// Радиус круга для ограничения силы запуска игрока
     /// </summary>
-    [SerializeField] private float forceModifier;
-
-    [SerializeField] private float maxLaunchRadius = 4f;
-    [SerializeField] private float maxForce = 10f;
+    [SerializeField] private float launchCircleRadius = 2.5f;
+    /// <summary>
+    /// Максимальная сила для запуска игрока
+    /// </summary>
+    [SerializeField] private float maxForce = 15f;
 
     private Player player;
     private Camera cam;
-    private LineRenderer lr;
+
     /// <summary>
     /// Начальная точка приложения силы
     /// </summary>
@@ -24,24 +25,17 @@ public class PlayerLauncher : MonoBehaviour
     /// Конечная точка приложения силы
     /// </summary>
     private Vector2 endPoint;
+
     /// <summary>
-    /// Расстояние между начальной и конечной точкой
+    /// Траектория приложения силы
     /// </summary>
-    private float distance;
-    /// <summary>
-    /// Сила толчка
-    /// </summary>
-    private Vector2 launchForce;
-    /// <summary>
-    /// Вектор направления толчка
-    /// </summary>
-    private Vector2 direction;
+    private LineRenderer forceTrajectory;
 
     private void Start()
     {
         player = GetComponent<Player>();
         cam = Camera.main;
-        lr = GetComponent<LineRenderer>();
+        forceTrajectory = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -60,36 +54,50 @@ public class PlayerLauncher : MonoBehaviour
         }
     }
     /// <summary>
-    /// При инициализации толчка
+    /// Начальная стадия запуска игрока
     /// </summary>
     private void OnLaunchStart()
     {
         startPoint = player.transform.position;
-        lr.enabled = true;
-        lr.SetPosition(0, startPoint);
+
+        forceTrajectory.enabled = true;
+        forceTrajectory.SetPosition(0, startPoint);
     }
     /// <summary>
-    /// При выборе силы толчка
+    /// Стадия выбора направления и силы запуска игрока
     /// </summary>
     private void OnLaunchCharge()
-    {
-        Vector2 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Vector2.Distance(startPoint, currentPoint) > maxLaunchRadius)
-        {
-            endPoint = startPoint + (currentPoint - startPoint).normalized * maxLaunchRadius;
-        }
-        else endPoint = currentPoint;
-        lr.SetPosition(1, endPoint);
-        direction = (startPoint - endPoint).normalized;
-        distance = Vector2.Distance(startPoint, endPoint);
+    {       
+        endPoint = CorrectEndPoint(launchCircleRadius);
+        forceTrajectory.SetPosition(1, endPoint);
     }
     /// <summary>
-    /// При выполнении толчка
+    /// Стадия запуска игрока
     /// </summary>
     private void OnLaunchRelease()
     {
-        lr.enabled = false;
-        launchForce = direction * Mathf.Clamp01(distance / maxLaunchRadius) * maxForce;
+        forceTrajectory.enabled = false;
+
+        Vector2 direction = (startPoint - endPoint).normalized;
+        float distance = Vector2.Distance(startPoint, endPoint);
+        Vector2 launchForce = direction * Mathf.Clamp01(distance / launchCircleRadius) * maxForce;
+
         player.Launch(launchForce);
+    }
+    /// <summary>
+    /// Корректирует положение конечной точки при выходе за границы радиуса запуска
+    /// </summary>
+    private Vector2 CorrectEndPoint(float launchRadius)
+    {
+        Vector2 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Vector2.Distance(startPoint, currentPoint) > launchRadius)
+        {
+            return startPoint + (currentPoint - startPoint).normalized * launchRadius;
+        }
+        else
+        {
+            return currentPoint;
+        }
     }
 }
