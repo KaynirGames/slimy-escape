@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpikeTrap_Close
+  m_Name: SpikeTrap_Off
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -36,7 +36,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isOpen
+    m_ConditionEvent: isTrapOn
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7673440262204059416}
@@ -52,6 +52,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-7501999158561137387
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14da0e113ab2e94c8b9d0a9f4734cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trap: {fileID: 0}
 --- !u!1101 &-6797837542033596890
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -61,7 +74,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isOpen
+    m_ConditionEvent: isTrapOn
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8760222175327490757}
@@ -77,6 +90,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5939501258488514497
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14da0e113ab2e94c8b9d0a9f4734cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trap: {fileID: 0}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -86,12 +112,12 @@ AnimatorController:
   m_Name: SpikeTrap_AC
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isOpen
+  - m_Name: isTrapOn
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -126,10 +152,10 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 80, y: 240, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 7673440262204059416}
+  m_DefaultState: {fileID: -8760222175327490757}
 --- !u!1102 &7673440262204059416
 AnimatorState:
   serializedVersion: 5
@@ -137,7 +163,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpikeTrap_Open
+  m_Name: SpikeTrap_On
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
