@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField, Tooltip("Задержка между срабатыванием ловушки")] float trapActDelay;
+    [SerializeField, Tooltip("Задержка между срабатыванием ловушки")] private float trapActDelay = 0.5f;
     
     private Animator animator;
 
@@ -20,6 +19,7 @@ public class Trap : MonoBehaviour
             col.GetComponent<Player>().Die();
         }
     }
+    
     /// <summary>
     /// Событие в анимации, меняет текущий статус ловушки на противоположный
     /// </summary>
@@ -27,6 +27,6 @@ public class Trap : MonoBehaviour
     public IEnumerator ChangeTrapStatus()
     {
         yield return new WaitForSeconds(trapActDelay);
-        animator.SetBool("isTrapOn", !animator.GetBool("isTrapOn"));
+        animator.SetBool("isActive", !animator.GetBool("isActive"));
     }
 }

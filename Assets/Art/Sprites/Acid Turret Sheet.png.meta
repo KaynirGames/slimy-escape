@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,14 +117,14 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74bba470306561f409246ab822827f95
+      spriteID: c6ab5ea7c312a1748bdb52cdbc958a9c
       internalID: 5833253821443949946
       vertices: []
       indices: 
@@ -138,14 +138,14 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1362059ce75cdf4c9b92ad2fb2b2378
+      spriteID: d771fb4d516add0469b8f14cb978938d
       internalID: -2160032753205258231
       vertices: []
       indices: 
@@ -159,14 +159,14 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cd3a45183c61a64da3013f7bb5169c8
+      spriteID: 8a04e15adcf69cd40aafdc6be2864a20
       internalID: 9030225815194585270
       vertices: []
       indices: 
@@ -180,14 +180,14 @@ TextureImporter:
         y: 0
         width: 512
         height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3af45505f9a4a7a48b4d7b110c32e47a
+      spriteID: d64794c9f557bff439026aff7495845f
       internalID: 1692818463446500973
       vertices: []
       indices: 
