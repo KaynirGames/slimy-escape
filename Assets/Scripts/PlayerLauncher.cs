@@ -40,17 +40,20 @@ public class PlayerLauncher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (player.IsGrounded())
         {
-            OnLaunchStart();
-        }
-        if(Input.GetMouseButton(0))
-        {
-            OnLaunchCharge();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            OnLaunchRelease();
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnLaunchStart();
+            }
+            if (Input.GetMouseButton(0))
+            {
+                OnLaunchCharge();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                OnLaunchRelease();
+            }
         }
     }
     /// <summary>

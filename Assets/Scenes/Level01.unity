@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 572943754}
   - component: {fileID: 572943756}
   - component: {fileID: 572943755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,7 +1667,7 @@ GameObject:
   - component: {fileID: 1553318923}
   - component: {fileID: 1553318925}
   - component: {fileID: 1553318924}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,27 +2557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 439530027161715736, guid: 470e894876ade1c44ac64e374a9a2eb4,
+    - target: {fileID: 755830279452393747, guid: 470e894876ade1c44ac64e374a9a2eb4,
         type: 3}
-      propertyPath: maxForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 439530027161715736, guid: 470e894876ade1c44ac64e374a9a2eb4,
-        type: 3}
-      propertyPath: maxLaunchRadius
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575788578, guid: 470e894876ade1c44ac64e374a9a2eb4, type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575788578, guid: 470e894876ade1c44ac64e374a9a2eb4, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.7499999
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575788578, guid: 470e894876ade1c44ac64e374a9a2eb4, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0
+      propertyPath: groundLayerMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 470e894876ade1c44ac64e374a9a2eb4, type: 3}

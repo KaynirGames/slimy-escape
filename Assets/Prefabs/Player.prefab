@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4658997262665287807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4724736343383190694}
+  m_Layer: 0
+  m_Name: GroundCheckPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4724736343383190694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658997262665287807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.353, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4758819913512351379}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4758819913512351391
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +62,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.43, y: -2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4724736343383190694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -115,7 +146,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -134,7 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e9ea29162b0ec489bda1ace13a715e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  groundCheckPoint: {fileID: 4658997262665287807}
+  groundCheckRadius: 2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  isGrounded: 0
 --- !u!114 &439530027161715736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,9 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff667063e43a64488ae0f67c2fd0d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceModifier: 2
-  maxLaunchRadius: 4
-  maxForce: 10
+  launchCircleRadius: 2.5
+  maxForce: 15
 --- !u!120 &1575788578
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -193,13 +228,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 15}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.7499999
         inSlope: 0
         outSlope: 0
         tangentMode: 0
