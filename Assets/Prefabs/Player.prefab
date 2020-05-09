@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4658997262665287807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.353, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4758819913512351379}
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 755830279452393747}
   - component: {fileID: 439530027161715736}
   - component: {fileID: 1575788578}
+  - component: {fileID: 713447065169237184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -60,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4758819913512351391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.43, y: -2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4724736343383190694}
@@ -105,7 +106,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad9ac6e4e5f055c449328d1478f067e8, type: 3}
+  m_Sprite: {fileID: -8270339843752218945, guid: c02fc1677ac9ba64a8533e4a9029c9b6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +117,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &4758819913512351377
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,12 +127,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4758819913512351391}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 88458d8c50bcc00439cd8aec339277ed, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000012798766, y: -0.07363821}
-  m_Size: {x: 0.69527274, y: 0.5399372}
+  m_Offset: {x: -0.02399748, y: 0.3183097}
+  m_Size: {x: 0.7739114, y: 0.5819345}
   m_Direction: 1
 --- !u!50 &4758819913512351390
 Rigidbody2D:
@@ -166,11 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheckPoint: {fileID: 4658997262665287807}
-  groundCheckRadius: 2
-  groundLayers:
+  groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  isGrounded: 0
+  animator: {fileID: 0}
 --- !u!114 &439530027161715736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +291,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!95 &713447065169237184
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758819913512351391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6a52dc45cc975749a523a5822dd6ca2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

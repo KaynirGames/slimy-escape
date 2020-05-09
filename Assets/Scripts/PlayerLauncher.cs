@@ -65,6 +65,8 @@ public class PlayerLauncher : MonoBehaviour
 
         forceTrajectory.enabled = true;
         forceTrajectory.SetPosition(0, startPoint);
+
+        player.animator.SetBool("isLaunching", true);
     }
     /// <summary>
     /// Стадия выбора направления и силы запуска игрока
@@ -86,6 +88,8 @@ public class PlayerLauncher : MonoBehaviour
         Vector2 launchForce = direction * Mathf.Clamp01(distance / launchCircleRadius) * maxForce;
 
         player.Launch(launchForce);
+        player.animator.SetBool("isLaunching", false);
+        player.animator.SetBool("wasLaunched", true);
     }
     /// <summary>
     /// Корректирует положение конечной точки при выходе за границы радиуса запуска
