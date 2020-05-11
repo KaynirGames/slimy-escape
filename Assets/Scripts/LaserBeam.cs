@@ -5,8 +5,14 @@ public class LaserBeam : MonoBehaviour
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform endPoint;
 
-    private Vector2 defaultScale; // начальный размер луча
-    private float newScaleX; // новый размер луча (до конечной точки)
+    /// <summary>
+    /// Начальная длина лазерного луча
+    /// </summary>
+    private Vector2 defaultScale;
+    /// <summary>
+    /// Длина луча до новой конечной точки
+    /// </summary>
+    private float newScaleX;
 
     private void Awake()
     {

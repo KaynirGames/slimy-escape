@@ -131,8 +131,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02399748, y: 0.3183097}
-  m_Size: {x: 0.7739114, y: 0.5819345}
+  m_Offset: {x: -0.0061262157, y: 0.33618134}
+  m_Size: {x: 0.8525501, y: 0.64627266}
   m_Direction: 1
 --- !u!50 &4758819913512351390
 Rigidbody2D:
@@ -171,7 +171,10 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  animator: {fileID: 0}
+  landingEffect: {fileID: 3883480126813784296, guid: b681b65b9c8518345b7c4544183afaff,
+    type: 3}
+  deathEffect: {fileID: 6996843672169802644, guid: 28ec518c9a8d38e4586907ae9f4541fd,
+    type: 3}
 --- !u!114 &439530027161715736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff667063e43a64488ae0f67c2fd0d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchCircleRadius: 2.5
-  maxForce: 15
+  maxDragRadius: 2.5
+  maxLaunchForce: 15
 --- !u!120 &1575788578
 LineRenderer:
   m_ObjectHideFlags: 0

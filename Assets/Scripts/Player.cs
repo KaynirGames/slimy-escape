@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject groundCheckPoint; // точка для проверки нахождения на земле
     [SerializeField] private LayerMask groundLayerMask; // какой слой является землей
+    [SerializeField] private ParticleSystem landingEffect; // частицы при приземлении
+    [SerializeField] private ParticleSystem deathEffect; // частицы после смерти
 
     private Rigidbody2D rb;
     private Collider2D col;
@@ -71,18 +73,24 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Событие в анимации приземления
+    /// Событие под конец анимации приземления
     /// </summary>
-    public void OnLanding()
+    public void OnLandingEnd()
     {
         animator.SetBool("wasLaunched", false);
     }
 
+    /// <summary>
+    /// Событие в начале анимации приземления
+    /// </summary>
+    public void OnLandingStart()
+    {
+        Instantiate(landingEffect, transform.position, Quaternion.identity);
+    }
+
     public void Die()
     {
-        //death particle effect
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        //убрать рестарт в класс-менеджер сцен
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
