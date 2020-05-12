@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour
     private Animator animator;
 
     private DragLauncher dragLauncher;
+
+    public delegate void OnPlayerDeath();
+    public static OnPlayerDeath onPlayerDeath;
 
     private void Start()
     {
@@ -90,6 +94,8 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        onPlayerDeath?.Invoke();
+
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
