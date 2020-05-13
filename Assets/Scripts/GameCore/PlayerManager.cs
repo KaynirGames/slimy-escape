@@ -28,6 +28,6 @@ public class PlayerManager : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        StartCoroutine(GameMaster.Instance.RestartLevel(1.5f));
+        StartCoroutine(GameMaster.Instance.RestartLevel(1f));
     }
 }

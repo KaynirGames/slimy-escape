@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    private GameMaster gameMaster;
+
+    private void Start()
+    {
+        gameMaster = GameMaster.Instance;
+    }
+
     public void PlayGame()
     {
-        GameMaster.Instance.LoadLevel("Level0");
+        gameMaster.LoadFirstLevel();
     }
 
     public void ExitGame()
     {
-        GameMaster.Instance.ExitGame();
+        gameMaster.ExitGame();
+    }
+
+    public void SelectLevel()
+    {
+        gameMaster.OpenLevelSelection();
     }
 }
