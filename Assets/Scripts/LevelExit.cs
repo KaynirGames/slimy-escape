@@ -10,8 +10,7 @@ public class LevelExit : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            GameMaster.instance.RestartLevel();
-            // старт следующего уровня, либо выход в меню выбора уровней, если это последний
+            GameMaster.Instance.LoadLevel(nextSceneName);
         }
     }
 }

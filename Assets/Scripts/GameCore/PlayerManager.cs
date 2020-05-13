@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;
+
+    #region Instance
+    public static PlayerManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -22,9 +24,10 @@ public class PlayerManager : MonoBehaviour
 
         Player.onPlayerDeath += OnPlayerDeath;
     }
+    #endregion
 
     private void OnPlayerDeath()
     {
-        StartCoroutine(GameMaster.instance.RestartLevel(1.5f));
+        StartCoroutine(GameMaster.Instance.RestartLevel(1.5f));
     }
 }

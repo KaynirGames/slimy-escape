@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
-    public static GameMaster instance;
+
+    #region Instance
+    public static GameMaster Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -21,6 +23,7 @@ public class GameMaster : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+    #endregion
 
     public void LoadLevel(string sceneName)
     {
@@ -48,12 +51,22 @@ public class GameMaster : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        // open pause menu
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        // close pause menu
+    }
+
+    public void ReturnToMainMenu()
+    {
+        ResumeGame();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("You quit the game!");
+        Application.Quit();
     }
 }
