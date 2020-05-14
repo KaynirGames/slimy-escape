@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    private GameMaster gameMaster;
-
-    private void Start()
-    {
-        gameMaster = GameMaster.Instance;
-    }
+    [SerializeField] private SceneFader sceneFader;
+    [SerializeField] private string firstLevelSceneName = "Level1";
+    [SerializeField] private string levelSelectionSceneName = "LevelSelection";
 
     public void PlayGame()
     {
-        gameMaster.LoadFirstLevel();
+        sceneFader.FadeToScene(firstLevelSceneName);
     }
 
     public void ExitGame()
     {
-        gameMaster.ExitGame();
+        Application.Quit();
     }
 
-    public void SelectLevel()
+    public void LevelSelection()
     {
-        gameMaster.OpenLevelSelection();
+        sceneFader.FadeToScene(levelSelectionSceneName);
     }
 }
