@@ -12,19 +12,20 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Image[] starImages;
     [SerializeField] private Sprite collectedStarSprite;
 
-    private void Awake()
+    private void Start()
     {
         pauseMenu.SetActive(false);
-        CollectableStar.onStarCollected += AddCollectedStars;
+        CollectableStar.onStarCollected += ShowCollectedStars;
 
-        string levelName = SceneManager.GetActiveScene().name;
-        int collectedStarsAmount = PlayerPrefs.GetInt($"{levelName}StarsCollected", 0);
-        AddCollectedStars(collectedStarsAmount);
+        ShowCollectedStars();
     }
 
-    private void AddCollectedStars(int collectedStarsAmount)
+    private void ShowCollectedStars()
     {
-        for (int i = 0; i < collectedStarsAmount; i++)
+        string currentLevelName = SceneManager.GetActiveScene().name;
+        int starsAmount = GameMaster.Instance.GetCollectedStarsAmount(currentLevelName);
+
+        for (int i = 0; i < starsAmount; i++)
         {
             starImages[i].sprite = collectedStarSprite;
         }

@@ -97,6 +97,6 @@ public class Player : MonoBehaviour
         onPlayerDeath?.Invoke();
 
         Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

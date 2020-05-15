@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] private int nextLevelBuildIndex;
+    [SerializeField] private string nextLevelName;
     [SerializeField] private SceneFader sceneFader;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            if (nextLevelBuildIndex > PlayerPrefs.GetInt("reachedLevel", 3))
-            {
-                PlayerPrefs.SetInt("reachedLevel", nextLevelBuildIndex);
-            }
-            sceneFader.FadeToScene(nextLevelBuildIndex);
+            GameMaster.Instance.SetReachedLevel();
+
+            sceneFader.FadeToScene(nextLevelName);
         }
     }
 }

@@ -23,31 +23,99 @@ public class GameMaster : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
+        
         Player.onPlayerDeath += OnPlayerDeath;
+
+        //PlayerPrefs.DeleteAll();
     }
     #endregion
 
     /// <summary>
-    /// Перезапустить текущий уровень
+    /// Наращивает количество собранных звезд на указанном уровне.
     /// </summary>
-    public void RestartLevel()
+    /// <param name="levelName"></param>
+    public void AddStarToCollection(string levelName)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int currentAmount = GetCollectedStarsAmount(levelName);
+
+        if (currentAmount == 3)
+            return;
+
+        string playerPrefKey = $"{levelName}_starsCollected";
+        PlayerPrefs.SetInt(playerPrefKey, currentAmount + 1);
+    }
+
+    /// <summary>
+    /// Возвращает количество собранных звезд на указанном уровне.
+    /// </summary>
+    /// <param name="levelName">Название уровня</param>
+    /// <returns></returns>
+    public int GetCollectedStarsAmount(string levelName)
+    {
+        string playerPrefKey = $"{levelName}_starsCollected";
+        return PlayerPrefs.GetInt(playerPrefKey, 0);
     }
     /// <summary>
-    /// Перезапустить текущий уровень с задержкой
+    /// Помечает звезду как собранную для указанного уровня.
     /// </summary>
-    /// <param name="delay">Задержка в секундах</param>
-    public IEnumerator RestartLevel(float delay)
+    /// <param name="levelName">Название уровня</param>
+    /// <param name="starIndex">Индекс звезды</param>
+    public void MarkStarAsCollected(string levelName, int starIndex)
+    {
+        string playerPrefKey = $"{levelName}_star_{starIndex}_isCollected";
+        PlayerPrefs.SetInt(playerPrefKey, 1);
+    }
+
+    /// <summary>
+    /// Проверяет, была ли собрана указанная звезда.
+    /// </summary>
+    /// <param name="levelName">Название уровня</param>
+    /// <param name="starIndex">Индекс звезды</param>
+    /// <returns></returns>
+    public bool IsStarCollected(string levelName, int starIndex)
+    {
+        string playerPrefKey = $"{levelName}_star_{starIndex}_isCollected";
+        return PlayerPrefs.GetInt(playerPrefKey, 0) == 1;
+    }
+
+    /// <summary>
+    /// Возвращает номер достигнутого уровня, нумерация начинается с 2 (индекс первого уровня в билде).
+    /// </summary>
+    /// <returns></returns>
+    public int GetReachedLevel()
+    {
+        return PlayerPrefs.GetInt("reachedLevel", 2);
+    }
+
+    /// <summary>
+    /// Устанавливает новый достигнутый уровень.
+    /// </summary>
+    public void SetReachedLevel()
+    {
+        int reachedLevel = GetReachedLevel();
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (reachedLevel > currentLevel)
+            return;
+
+        PlayerPrefs.SetInt("reachedLevel", currentLevel + 1);
+    }
+
+    /// <summary>
+    /// Перезапускает текущий уровень с задержкой.
+    /// </summary>
+    private IEnumerator DelayedRestart(float delay)
     {
         yield return new WaitForSeconds(delay);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    /// <summary>
+    /// Выполняет действия при смерти игрока.
+    /// </summary>
     private void OnPlayerDeath()
     {
-        StartCoroutine(RestartLevel(restartDelayOnDeath));
+        StartCoroutine(DelayedRestart(restartDelayOnDeath));
     }
 }
