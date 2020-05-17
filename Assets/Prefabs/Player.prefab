@@ -82,6 +82,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -153,7 +154,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &755830279452393747
 MonoBehaviour:
@@ -171,9 +172,6 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  uiLayerMask:
-    serializedVersion: 2
-    m_Bits: 32
   landingEffect: {fileID: 3883480126813784296, guid: b681b65b9c8518345b7c4544183afaff,
     type: 3}
   deathEffect: {fileID: 6996843672169802644, guid: 28ec518c9a8d38e4586907ae9f4541fd,
@@ -206,6 +204,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
