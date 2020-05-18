@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class TimerManager : MonoBehaviour
 {
     [SerializeField] private float levelTimeLimit = 30f;
     [SerializeField] private Gradient timerColor;
@@ -15,31 +12,12 @@ public class LevelManager : MonoBehaviour
     private float timer;
     private Text timerText;
     private bool isTimerEnded;
-    private int collectedStarsAmount;
 
     private void Start()
     {
         timer = levelTimeLimit;
         timerText = uiTimerText.GetComponent<Text>();
         isTimerEnded = false;
-        collectedStarsAmount = 0;
-
-        CollectableStar.onStarCollected += OnStarCollected;
-    }
-
-    private void OnStarCollected()
-    {
-        collectedStarsAmount++;
-
-        Debug.Log(collectedStarsAmount);
-
-        string currentLevelName = SceneManager.GetActiveScene().name;
-        int starsInCollection = GameMaster.Instance.GetCollectedStarsAmount(currentLevelName);
-
-        if (collectedStarsAmount > starsInCollection && collectedStarsAmount <= 3)
-        {
-            GameMaster.Instance.AddStarsToCollection(currentLevelName, collectedStarsAmount);
-        }
     }
 
     private void Update()

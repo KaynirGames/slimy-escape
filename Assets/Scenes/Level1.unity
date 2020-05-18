@@ -5881,7 +5881,7 @@ PrefabInstance:
     - target: {fileID: 4484201672216563932, guid: bd4a5089da8dae6428a3b60346859be4,
         type: 3}
       propertyPath: m_Name
-      value: LevelManager
+      value: TimerManager
       objectReference: {fileID: 0}
     - target: {fileID: 4484201672216563934, guid: bd4a5089da8dae6428a3b60346859be4,
         type: 3}
