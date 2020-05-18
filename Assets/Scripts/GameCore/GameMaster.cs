@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     [SerializeField] private float restartDelayOnDeath = 0.5f; // Задержка рестарта уровня при смерти игрока
+    [SerializeField] private int lastLevelBuildIndex; // Индекс последнего уровня
 
     #region Instance
     public static GameMaster Instance { get; private set; }
@@ -95,9 +96,11 @@ public class GameMaster : MonoBehaviour
         int reachedLevel = GetReachedLevel();
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        if (reachedLevel > currentLevel)
+        // Ничего не делаем, если текущий уровень уже пройден, либо является последним.
+        if (reachedLevel > currentLevel || currentLevel == lastLevelBuildIndex)
             return;
 
+        // Прошли текущий уровень, а значит достигли следующего.
         PlayerPrefs.SetInt("reachedLevel", currentLevel + 1);
     }
 
