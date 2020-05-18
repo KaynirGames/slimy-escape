@@ -9,7 +9,7 @@ public class LevelSelectButton : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < GameMaster.Instance.GetCollectedStarsAmount(levelName); i++)
+        for (int i = 0; i < GameMaster.Instance.GetCollectedStars(levelName); i++)
         {
             // Показать собранные на уровне звезды
             starImages[i].sprite = collectedStarSprite;

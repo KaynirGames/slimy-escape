@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameMaster : MonoBehaviour
 {
     [SerializeField] private float restartDelayOnDeath = 0.5f; // Задержка рестарта уровня при смерти игрока
     [SerializeField] private int lastLevelBuildIndex; // Индекс последнего уровня
+
+    public event Action<string, int> OnStarTriggerEnter;
 
     #region Instance
     public static GameMaster Instance { get; private set; }
@@ -26,10 +29,13 @@ public class GameMaster : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         Player.onPlayerDeath += OnPlayerDeath;
-
-        //PlayerPrefs.DeleteAll();
     }
     #endregion
+
+    public void StarTriggerEnter(string levelName, int starIndex)
+    {
+        OnStarTriggerEnter?.Invoke(levelName, starIndex);
+    }
 
     /// <summary>
     /// Наращивает количество собранных звезд на указанном уровне.
@@ -37,7 +43,7 @@ public class GameMaster : MonoBehaviour
     /// <param name="levelName"></param>
     public void AddStarToCollection(string levelName)
     {
-        int currentAmount = GetCollectedStarsAmount(levelName);
+        int currentAmount = GetCollectedStars(levelName);
 
         if (currentAmount == 3)
             return;
@@ -51,7 +57,7 @@ public class GameMaster : MonoBehaviour
     /// </summary>
     /// <param name="levelName">Название уровня</param>
     /// <returns></returns>
-    public int GetCollectedStarsAmount(string levelName)
+    public int GetCollectedStars(string levelName)
     {
         string playerPrefKey = $"{levelName}_starsCollected";
         return PlayerPrefs.GetInt(playerPrefKey, 0);

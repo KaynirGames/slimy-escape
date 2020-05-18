@@ -44,6 +44,11 @@ public class Player : MonoBehaviour
                 animator.SetBool("wasLaunched", true);
             }
         }
+        // Для теста
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     /// <summary>

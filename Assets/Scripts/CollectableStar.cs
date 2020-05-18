@@ -1,24 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollectableStar : MonoBehaviour
 {
-    public delegate void OnStarCollected();
-    public static OnStarCollected onStarCollected;
-
     [SerializeField] private int starIndex;
-    
-    private GameMaster gameMaster;
+
     private string currentLevelName;
 
     private void Start()
     {
-        gameMaster = GameMaster.Instance;
         currentLevelName = SceneManager.GetActiveScene().name;
 
-        if (gameMaster.IsStarCollected(currentLevelName, starIndex))
+        if (GameMaster.Instance.IsStarCollected(currentLevelName, starIndex))
             gameObject.SetActive(false);
     }
 
@@ -26,10 +19,7 @@ public class CollectableStar : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            gameMaster.AddStarToCollection(currentLevelName);
-            gameMaster.MarkStarAsCollected(currentLevelName, starIndex);
-
-            onStarCollected?.Invoke();
+            GameMaster.Instance.StarTriggerEnter(currentLevelName, starIndex);
 
             gameObject.SetActive(false);
         }

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
@@ -12,18 +10,24 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Image[] starImages;
     [SerializeField] private Sprite collectedStarSprite;
 
+    private string currentLevelName;
+
     private void Start()
     {
         pauseMenu.SetActive(false);
-        CollectableStar.onStarCollected += ShowCollectedStars;
+        currentLevelName = SceneManager.GetActiveScene().name;
 
-        ShowCollectedStars();
+        GameMaster.Instance.OnStarTriggerEnter += ShowCollectedStars;
+
+        ShowCollectedStars(currentLevelName, 0);
     }
 
-    private void ShowCollectedStars()
+    private void ShowCollectedStars(string levelName, int starIndex)
     {
-        string currentLevelName = SceneManager.GetActiveScene().name;
-        int starsAmount = GameMaster.Instance.GetCollectedStarsAmount(currentLevelName);
+        if (currentLevelName != levelName)
+            return;
+
+        int starsAmount = GameMaster.Instance.GetCollectedStars(levelName);
 
         for (int i = 0; i < starsAmount; i++)
         {
@@ -51,5 +55,10 @@ public class LevelUI : MonoBehaviour
     {
         ResumeGame();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void OnDestroy()
+    {
+        GameMaster.Instance.OnStarTriggerEnter -= ShowCollectedStars;
     }
 }
