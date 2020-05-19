@@ -12,17 +12,17 @@ public class LaserBeam : MonoBehaviour
     /// <summary>
     /// Длина луча до новой конечной точки
     /// </summary>
-    private float newScaleX;
+    private float newScaleY;
 
     private void Awake()
     {
         defaultScale = transform.localScale;
-        newScaleX = Mathf.Abs(startPoint.localPosition.y - endPoint.localPosition.y);
+        newScaleY = Mathf.Abs(startPoint.localPosition.y - endPoint.localPosition.y);
     }
 
     public void ActivateBeam()
     {
-        transform.localScale = new Vector2(newScaleX, defaultScale.y);
+        transform.localScale = new Vector2(defaultScale.x, newScaleY);
     }
 
     public void DeactivateBeam()

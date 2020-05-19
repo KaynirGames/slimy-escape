@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ad0af68cb5ef24a990d3fbf4313876, type: 3}
-  m_Name: Landing
+  m_Name: PlayerDeath
   m_EditorClassIdentifier: 
-  soundName: Landing
-  clip: {fileID: 8300000, guid: 476b4809ee928594cb179e6d972d215f, type: 3}
-  volume: 0.15
-  pitch: 1.25
+  soundName: PlayerDeath
+  clip: {fileID: 8300000, guid: cac82f5194eeba646930055e16dc146d, type: 3}
+  volume: 0.75
+  pitch: 2.5
   loop: 0
   source: {fileID: 0}

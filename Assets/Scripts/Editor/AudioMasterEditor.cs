@@ -39,7 +39,7 @@ public class AudioMasterEditor : Editor
 
                 if (GUILayout.Button("Прослушать"))
                 {
-                    audioMaster.PreviewSound(sound.name);
+                    audioMaster.PreviewSound(sound.soundName);
                 }
 
                 if (GUILayout.Button("Остановить"))

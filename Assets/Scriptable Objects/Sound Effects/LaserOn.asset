@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ad0af68cb5ef24a990d3fbf4313876, type: 3}
-  m_Name: Landing
+  m_Name: LaserOn
   m_EditorClassIdentifier: 
-  soundName: Landing
-  clip: {fileID: 8300000, guid: 476b4809ee928594cb179e6d972d215f, type: 3}
-  volume: 0.15
-  pitch: 1.25
+  soundName: LaserOn
+  clip: {fileID: 8300000, guid: 09661ef77f9fcc343ae1ea27c577a798, type: 3}
+  volume: 0.25
+  pitch: 1
   loop: 0
   source: {fileID: 0}

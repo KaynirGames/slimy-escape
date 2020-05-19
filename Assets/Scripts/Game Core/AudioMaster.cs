@@ -24,6 +24,11 @@ public class AudioMaster : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        foreach (var sound in soundEffects)
+        {
+            sound.source = gameObject.AddComponent<AudioSource>();
+        }
+
         PlaySoundEffect("MainTheme");
     }
     #endregion
@@ -42,24 +47,6 @@ public class AudioMaster : MonoBehaviour
             return;
         }
 
-        soundEffect.source = gameObject.AddComponent<AudioSource>();
-        soundEffect.Play();
-    }
-    /// <summary>
-    /// Воспроизвести звуковой эффект из указанного источника.
-    /// </summary>
-    /// <param name="soundName">Название звукового эффекта.</param>
-    public void PlaySoundEffect(string soundName, AudioSource audioSource)
-    {
-        SoundEffect soundEffect = soundEffects.Find(sound => sound.soundName == soundName);
-
-        if (soundEffect == null)
-        {
-            Debug.LogWarning($"Sound effect: {soundName} is not found.");
-            return;
-        }
-
-        soundEffect.source = audioSource;
         soundEffect.Play();
     }
 

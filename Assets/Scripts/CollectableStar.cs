@@ -21,6 +21,8 @@ public class CollectableStar : MonoBehaviour
         {
             GameMaster.Instance.StarTriggerEnter(currentLevelName, starIndex);
 
+            AudioMaster.Instance.PlaySoundEffect("Star");
+
             gameObject.SetActive(false);
         }
     }

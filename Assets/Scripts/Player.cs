@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (IsGrounded())
+        // Предоставить управление персонажем, если он находится на земле, и не было произведено нажатие по UI элементу.
+        if (IsGrounded() && !EventSystem.current.IsPointerOverGameObject())
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
                 Launch(dragLauncher.GetLaunchForce());
                 animator.SetBool("isLaunching", false);
                 animator.SetBool("wasLaunched", true);
+
+                AudioMaster.Instance.PlaySoundEffect("Jump");
             }
         }
         // Для теста
@@ -91,6 +95,7 @@ public class Player : MonoBehaviour
     public void OnLandingStart()
     {
         Instantiate(landingEffect, transform.position, Quaternion.identity);
+        AudioMaster.Instance.PlaySoundEffect("Landing");
     }
 
     public void Die()
@@ -98,6 +103,7 @@ public class Player : MonoBehaviour
         onPlayerDeath?.Invoke();
 
         Instantiate(deathEffect, transform.position, Quaternion.identity);
+        AudioMaster.Instance.PlaySoundEffect("PlayerDeath");
         gameObject.SetActive(false);
     }
 }
