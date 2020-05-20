@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Landing
   clip: {fileID: 8300000, guid: 476b4809ee928594cb179e6d972d215f, type: 3}
-  volume: 0.15
+  volume: 0.25
   pitch: 1.25
   loop: 0
   source: {fileID: 0}

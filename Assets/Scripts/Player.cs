@@ -14,9 +14,6 @@ public class Player : MonoBehaviour
 
     private DragLauncher dragLauncher;
 
-    public delegate void OnPlayerDeath();
-    public static OnPlayerDeath onPlayerDeath;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -100,10 +97,11 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        onPlayerDeath?.Invoke();
-
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         AudioMaster.Instance.PlaySoundEffect("PlayerDeath");
+
+        GameMaster.Instance.PlayerIsDead();
+
         gameObject.SetActive(false);
     }
 }

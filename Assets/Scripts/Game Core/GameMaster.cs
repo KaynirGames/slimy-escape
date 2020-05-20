@@ -6,10 +6,11 @@ using System;
 
 public class GameMaster : MonoBehaviour
 {
-    [SerializeField] private float restartDelayOnDeath = 0.5f; // Задержка рестарта уровня при смерти игрока
-    [SerializeField] private int lastLevelBuildIndex; // Индекс последнего уровня
+    [SerializeField] private float restartDelayOnDeath = 0.5f; // Задержка рестарта уровня при смерти игрока.
+    [SerializeField] private int lastLevelBuildIndex; // Индекс последнего уровня.
 
-    public event Action<string, int> OnStarTriggerEnter;
+    public event Action<string, int> OnStarTriggerEnter; // Событие на сбор звезды.
+    public event Action OnPlayerDeath; // Событие на смерть игрока.
 
     #region Instance
     public static GameMaster Instance { get; private set; }
@@ -28,13 +29,26 @@ public class GameMaster : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         
-        Player.onPlayerDeath += OnPlayerDeath;
+        OnPlayerDeath += RestartLevel;
     }
     #endregion
 
+    /// <summary>
+    /// Уведомляет подписчиков (LevelManager, LevelUI) о сборе звезды.
+    /// </summary>
+    /// <param name="levelName">Название уровня.</param>
+    /// <param name="starIndex">Индекс звезды.</param>
     public void StarTriggerEnter(string levelName, int starIndex)
     {
         OnStarTriggerEnter?.Invoke(levelName, starIndex);
+    }
+
+    /// <summary>
+    /// Уведомляет подписчиков (GameMaster) о смерти игрока.
+    /// </summary>
+    public void PlayerIsDead()
+    {
+        OnPlayerDeath?.Invoke();
     }
 
     /// <summary>
@@ -123,7 +137,7 @@ public class GameMaster : MonoBehaviour
     /// <summary>
     /// Выполняет действия при смерти игрока.
     /// </summary>
-    private void OnPlayerDeath()
+    private void RestartLevel()
     {
         StartCoroutine(DelayedRestart(restartDelayOnDeath));
     }

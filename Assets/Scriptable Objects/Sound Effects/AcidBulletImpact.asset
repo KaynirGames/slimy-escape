@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ad0af68cb5ef24a990d3fbf4313876, type: 3}
-  m_Name: LaserOn
+  m_Name: AcidBulletImpact
   m_EditorClassIdentifier: 
-  soundName: LaserOn
-  clip: {fileID: 8300000, guid: 09661ef77f9fcc343ae1ea27c577a798, type: 3}
+  soundName: AcidBulletImpact
+  clip: {fileID: 8300000, guid: dfdf7629d56c53240921de7a48adb7be, type: 3}
   volume: 0.15
-  pitch: 1
+  pitch: 1.25
   loop: 0
   source: {fileID: 0}

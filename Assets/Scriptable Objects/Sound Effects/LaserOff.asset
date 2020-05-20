@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: LaserOff
   clip: {fileID: 8300000, guid: 9eacb87488fb58e4e827146f26b4ffbd, type: 3}
-  volume: 0.25
+  volume: 0.15
   pitch: 1.5
   loop: 0
   source: {fileID: 0}

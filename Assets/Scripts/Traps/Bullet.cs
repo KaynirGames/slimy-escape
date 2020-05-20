@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem explosionEffect; // частицы после столкновения с объектом
+    [SerializeField] private ParticleSystem explosionEffect; // Частицы после столкновения с объектом.
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -14,10 +12,13 @@ public class Bullet : MonoBehaviour
         }
         Explode();
     }
-
+    /// <summary>
+    /// Уничтожение пули при столкновении с объектом.
+    /// </summary>
     private void Explode()
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
+        AudioMaster.Instance.PlaySoundEffect("AcidBulletImpact");
         Destroy(gameObject);
     }
 }

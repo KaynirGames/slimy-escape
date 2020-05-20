@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AcidTurret : MonoBehaviour
 {
     [SerializeField, Tooltip("Задержка между выстрелами")] private float fireDelay = 1f;
-    [SerializeField, Tooltip("Сила выстрела")] private float launchForce = 5f;
+    [SerializeField, Tooltip("Сила запуска снаряда")] private float launchForce = 5f;
     [SerializeField] private GameObject acidBulletPrefab;
     [SerializeField] private Transform firePoint;
 
@@ -16,14 +15,20 @@ public class AcidTurret : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetTrigger("Fire");
     }
-
+    /// <summary>
+    /// Выстрел снарядом, событие в анимации.
+    /// </summary>
     public void Fire()
     {
         GameObject bullet = Instantiate(acidBulletPrefab, firePoint.position, transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(-transform.right * launchForce, ForceMode2D.Impulse);
+        AudioMaster.Instance.PlaySoundEffect("AcidTurretFire");
         StartCoroutine(WaitForDelay());
     }
-
+    /// <summary>
+    /// Выждать время перед следующим выстрелом. 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator WaitForDelay()
     {
         yield return new WaitForSeconds(fireDelay);

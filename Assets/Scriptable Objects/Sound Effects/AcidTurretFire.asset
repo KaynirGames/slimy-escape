@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83ad0af68cb5ef24a990d3fbf4313876, type: 3}
-  m_Name: LaserOn
+  m_Name: AcidTurretFire
   m_EditorClassIdentifier: 
-  soundName: LaserOn
-  clip: {fileID: 8300000, guid: 09661ef77f9fcc343ae1ea27c577a798, type: 3}
+  soundName: AcidTurretFire
+  clip: {fileID: 8300000, guid: 353f229495f761b448cf29e5b2d852dc, type: 3}
   volume: 0.15
-  pitch: 1
+  pitch: 1.25
   loop: 0
   source: {fileID: 0}

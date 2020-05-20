@@ -14,8 +14,11 @@ public class LaserBeam : MonoBehaviour
     /// </summary>
     private float newScaleY;
 
+    private Collider2D laserCollider;
+
     private void Awake()
     {
+        laserCollider = GetComponent<Collider2D>();
         defaultScale = transform.localScale;
         newScaleY = Mathf.Abs(startPoint.localPosition.y - endPoint.localPosition.y);
     }
@@ -23,11 +26,13 @@ public class LaserBeam : MonoBehaviour
     public void ActivateBeam()
     {
         transform.localScale = new Vector2(defaultScale.x, newScaleY);
+        laserCollider.enabled = true;
     }
 
     public void DeactivateBeam()
     {
         transform.localScale = defaultScale;
+        laserCollider.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)

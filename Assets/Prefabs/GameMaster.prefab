@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelayOnDeath: 0.75
-  lastLevelBuildIndex: 3
+  lastLevelBuildIndex: 10
