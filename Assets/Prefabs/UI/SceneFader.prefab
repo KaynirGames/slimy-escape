@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4382319390895918386}
   - component: {fileID: 4382319390895918387}
   m_Layer: 0
-  m_Name: fadeImage
+  m_Name: FadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

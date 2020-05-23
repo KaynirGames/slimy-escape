@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceba768af9c70d645b616f69b4ddaf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgThemeChangeLevelIndex: 7
   soundEffects:
   - {fileID: 11400000, guid: bb926b16338a58f4ea83dcd481357f48, type: 2}
   - {fileID: 11400000, guid: 46095f85e3b3e264e8462e9df19fb3c4, type: 2}
@@ -55,4 +56,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75d13effdb828db4ea49240c57b84f9f, type: 2}
   - {fileID: 11400000, guid: 5818eb7ded256364d9e66b1dadc24435, type: 2}
   - {fileID: 11400000, guid: 21f11e2a2e8922648a6d1e659432e27c, type: 2}
+  - {fileID: 11400000, guid: abe4980c051fdbc47aa743802abc3e7b, type: 2}
   previewSource: {fileID: 0}

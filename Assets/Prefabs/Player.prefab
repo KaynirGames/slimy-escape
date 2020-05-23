@@ -40,12 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4758819913512351379}
   - component: {fileID: 4758819913512351376}
-  - component: {fileID: 4758819913512351377}
   - component: {fileID: 4758819913512351390}
   - component: {fileID: 755830279452393747}
   - component: {fileID: 439530027161715736}
   - component: {fileID: 1575788578}
   - component: {fileID: 713447065169237184}
+  - component: {fileID: 1170054549521440714}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -119,22 +119,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!70 &4758819913512351377
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4758819913512351391}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 88458d8c50bcc00439cd8aec339277ed, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0024632437, y: 0.3178678}
-  m_Size: {x: 0.7866242, y: 0.5363937}
-  m_Direction: 1
 --- !u!50 &4758819913512351390
 Rigidbody2D:
   serializedVersion: 4
@@ -188,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff667063e43a64488ae0f67c2fd0d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDragRadius: 2.5
+  maxDragRadius: 2
   maxLaunchForce: 15
 --- !u!120 &1575788578
 LineRenderer:
@@ -315,3 +299,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &1170054549521440714
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758819913512351391}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 88458d8c50bcc00439cd8aec339277ed, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008793913, y: 0.31752768}
+  m_Size: {x: 0.8101114, y: 0.56470925}
+  m_Direction: 1

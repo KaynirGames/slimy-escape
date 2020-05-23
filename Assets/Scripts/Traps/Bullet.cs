@@ -10,7 +10,11 @@ public class Bullet : MonoBehaviour
         {
             col.collider.GetComponent<Player>().Die();
         }
-        Explode();
+
+        if(!col.collider.CompareTag("Turret"))
+        {
+            Explode();
+        }
     }
     /// <summary>
     /// Уничтожение пули при столкновении с объектом.

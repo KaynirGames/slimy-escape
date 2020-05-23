@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem deathEffect; // частицы после смерти
 
     private Rigidbody2D rb;
-    private Collider2D col;
+    private Collider2D playerCol;
     private Animator animator;
 
     private DragLauncher dragLauncher;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+        playerCol = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         dragLauncher = GetComponent<DragLauncher>();
     }
@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
     /// <returns></returns>
     private bool IsGrounded()
     {
-        Collider2D collider = Physics2D.OverlapBox(groundCheckPoint.transform.position, col.bounds.extents, 0, groundLayerMask);
+        Collider2D collider = Physics2D.OverlapBox(groundCheckPoint.transform.position, playerCol.bounds.extents * 1.25f, 0, groundLayerMask);
+
         if (collider != null)
         {
             animator.SetBool("isGrounded", true);

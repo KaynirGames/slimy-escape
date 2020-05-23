@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioMaster : MonoBehaviour
 {
+    [SerializeField] private int bgThemeChangeLevelIndex; // Индекс уровня в билде, где меняется фоновая музыка.
+
     public List<SoundEffect> soundEffects; // Список звуковых эффектов в игре.
 
     [HideInInspector] public AudioSource previewSource; // Источник звука для предварительного просмотра звукового эффекта.
+
+    private bool isDefaultBGTheme = true; // Очередь воспроизводить стандартную фоновую музыку?
 
     #region Instance
     public static AudioMaster Instance { get; private set; }
@@ -28,10 +33,25 @@ public class AudioMaster : MonoBehaviour
         {
             sound.source = gameObject.AddComponent<AudioSource>();
         }
-
-        PlaySoundEffect("MainTheme");
     }
     #endregion
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex < bgThemeChangeLevelIndex && isDefaultBGTheme)
+        {
+            MuteSoundEffect("MainThemeAlt");
+            PlaySoundEffect("MainTheme");
+            isDefaultBGTheme = false;
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex >= bgThemeChangeLevelIndex && !isDefaultBGTheme)
+        {
+            MuteSoundEffect("MainTheme");
+            PlaySoundEffect("MainThemeAlt");
+            isDefaultBGTheme = true;
+        }
+    }
 
     /// <summary>
     /// Воспроизвести звуковой эффект из мастера аудио.
@@ -48,6 +68,23 @@ public class AudioMaster : MonoBehaviour
         }
 
         soundEffect.Play();
+    }
+
+    /// <summary>
+    /// Остановить воспроизведение звукового эффекта.
+    /// </summary>
+    /// <param name="soundName">Название звукового эффекта.</param>
+    public void MuteSoundEffect(string soundName)
+    {
+        SoundEffect soundEffect = soundEffects.Find(sound => sound.soundName == soundName);
+
+        if (soundEffect == null)
+        {
+            Debug.LogWarning($"Sound effect: {soundName} is not found.");
+            return;
+        }
+
+        soundEffect.Mute();
     }
 
     /// <summary>

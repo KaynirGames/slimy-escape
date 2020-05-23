@@ -46,4 +46,11 @@ public class SoundEffect : ScriptableObject
         InitializeAudioSource();
         source.Play();
     }
+    /// <summary>
+    /// Остановить воспроизведение звукового эффекта.
+    /// </summary>
+    public void Mute()
+    {
+        source.Stop();
+    }
 }
