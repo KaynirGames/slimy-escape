@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Animator animator;
 
     private DragLauncher dragLauncher;
+    private bool isTouchingUI = false;
 
     private void Start()
     {
@@ -25,30 +26,86 @@ public class Player : MonoBehaviour
     private void Update()
     {
         // Предоставить управление персонажем, если он находится на земле, и не было произведено нажатие по UI элементу.
-        if (IsGrounded() && !EventSystem.current.IsPointerOverGameObject())
+        if (IsGrounded())
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.touchCount == 1)
             {
-                dragLauncher.SetStartDragPoint(transform.position);
-                animator.SetBool("isLaunching", true);
-            }
-            if (Input.GetMouseButton(0))
-            {
-                dragLauncher.SetEndDragPoint();
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                Launch(dragLauncher.GetLaunchForce());
-                animator.SetBool("isLaunching", false);
-                animator.SetBool("wasLaunched", true);
+                Touch touch = Input.GetTouch(0);
 
-                AudioMaster.Instance.PlaySoundEffect("Jump");
+                if (touch.phase == TouchPhase.Began)
+                {
+                    if (EventSystem.current.IsPointerOverGameObject(touch.fingerId)) // Работает только в начальной фазе прикосновения к экрану.
+                    {
+                        isTouchingUI = true;
+                    }
+                    else
+                    {
+                        isTouchingUI = false;
+                    }
+                }
+                TouchMovement(touch);
             }
         }
         // Для теста
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //}
+    }
+
+    /// <summary>
+    /// Управление персонажем на ПК (для теста)
+    /// </summary>
+    //private void MouseMovement()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        dragLauncher.SetStartDragPoint(transform.position);
+    //        animator.SetBool("isLaunching", true);
+    //    }
+    //    if (Input.GetMouseButton(0))
+    //    {
+    //        dragLauncher.SetEndDragPoint();
+    //    }
+    //    if (Input.GetMouseButtonUp(0))
+    //    {
+    //        Launch(dragLauncher.GetLaunchForce());
+    //        animator.SetBool("isLaunching", false);
+    //        animator.SetBool("wasLaunched", true);
+
+    //        AudioMaster.Instance.PlaySoundEffect("Jump");
+    //    }
+    //}
+
+    /// <summary>
+    /// Управление персонажем на мобильной платформе
+    /// </summary>
+    private void TouchMovement(Touch touch)
+    {
+        if (!isTouchingUI)
         {
-            PlayerPrefs.DeleteAll();
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    {
+                        dragLauncher.SetStartDragPoint(transform.position);
+                        animator.SetBool("isLaunching", true);
+                        break;
+                    }
+                case TouchPhase.Moved:
+                    {
+                        dragLauncher.SetEndDragPoint();
+                        break;
+                    }
+                case TouchPhase.Ended:
+                    {
+                        Launch(dragLauncher.GetLaunchForce());
+                        animator.SetBool("isLaunching", false);
+                        animator.SetBool("wasLaunched", true);
+                        AudioMaster.Instance.PlaySoundEffect("Jump");
+                        break;
+                    }
+            }
         }
     }
 
